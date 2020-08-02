@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75131DC124D70FA4002ACDF6 /* BoxDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75131DC024D70FA4002ACDF6 /* BoxDropView.swift */; };
+		75131DC324D71060002ACDF6 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75131DC224D71060002ACDF6 /* BoxView.swift */; };
+		75131DC524D71229002ACDF6 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75131DC424D71229002ACDF6 /* Box.swift */; };
+		751712D924D32A060048ED65 /* DragEditorDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712D824D32A060048ED65 /* DragEditorDemoApp.swift */; };
+		751712DB24D32A060048ED65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712DA24D32A060048ED65 /* ContentView.swift */; };
+		751712DD24D32A070048ED65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751712DC24D32A070048ED65 /* Assets.xcassets */; };
+		751712E024D32A070048ED65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751712DF24D32A070048ED65 /* Preview Assets.xcassets */; };
+		751712F024D32D490048ED65 /* DragEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 751712EF24D32D490048ED65 /* DragEditor */; };
+		751712F324D32DEF0048ED65 /* BoxDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F224D32DEF0048ED65 /* BoxDragView.swift */; };
+		751712F524D32E1D0048ED65 /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F424D32E1D0048ED65 /* ConnectFourView.swift */; };
+		751712F724D32E890048ED65 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F624D32E890048ED65 /* CustomTabView.swift */; };
+		751712FB24D330790048ED65 /* BoxDragBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712FA24D330790048ED65 /* BoxDragBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75131DC024D70FA4002ACDF6 /* BoxDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDropView.swift; sourceTree = "<group>"; };
+		75131DC224D71060002ACDF6 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		75131DC424D71229002ACDF6 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		751712D524D32A060048ED65 /* DragEditorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragEditorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		751712D824D32A060048ED65 /* DragEditorDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragEditorDemoApp.swift; sourceTree = "<group>"; };
+		751712DA24D32A060048ED65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		751712DC24D32A070048ED65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		751712DF24D32A070048ED65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		751712E124D32A070048ED65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751712ED24D32D3D0048ED65 /* DragEditor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DragEditor; path = ../DragEditor; sourceTree = "<group>"; };
+		751712F224D32DEF0048ED65 /* BoxDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragView.swift; sourceTree = "<group>"; };
+		751712F424D32E1D0048ED65 /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
+		751712F624D32E890048ED65 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		751712FA24D330790048ED65 /* BoxDragBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragBuilder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		751712D224D32A060048ED65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				751712F024D32D490048ED65 /* DragEditor in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		751712CC24D32A060048ED65 = {
+			isa = PBXGroup;
+			children = (
+				751712D724D32A060048ED65 /* DragEditorDemo */,
+				751712ED24D32D3D0048ED65 /* DragEditor */,
+				751712D624D32A060048ED65 /* Products */,
+				751712EE24D32D490048ED65 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		751712D624D32A060048ED65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				751712D524D32A060048ED65 /* DragEditorDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		751712D724D32A060048ED65 /* DragEditorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				751712D824D32A060048ED65 /* DragEditorDemoApp.swift */,
+				751712DA24D32A060048ED65 /* ContentView.swift */,
+				751712F824D330520048ED65 /* BoxDrag */,
+				751712F924D3305B0048ED65 /* ConnectFour */,
+				751712F624D32E890048ED65 /* CustomTabView.swift */,
+				751712F124D32D5C0048ED65 /* Supporting Files */,
+				751712DE24D32A070048ED65 /* Preview Content */,
+			);
+			path = DragEditorDemo;
+			sourceTree = "<group>";
+		};
+		751712DE24D32A070048ED65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				751712DF24D32A070048ED65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		751712EE24D32D490048ED65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		751712F124D32D5C0048ED65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				751712DC24D32A070048ED65 /* Assets.xcassets */,
+				751712E124D32A070048ED65 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		751712F824D330520048ED65 /* BoxDrag */ = {
+			isa = PBXGroup;
+			children = (
+				751712F224D32DEF0048ED65 /* BoxDragView.swift */,
+				75131DC024D70FA4002ACDF6 /* BoxDropView.swift */,
+				75131DC424D71229002ACDF6 /* Box.swift */,
+				75131DC224D71060002ACDF6 /* BoxView.swift */,
+				751712FA24D330790048ED65 /* BoxDragBuilder.swift */,
+			);
+			path = BoxDrag;
+			sourceTree = "<group>";
+		};
+		751712F924D3305B0048ED65 /* ConnectFour */ = {
+			isa = PBXGroup;
+			children = (
+				751712F424D32E1D0048ED65 /* ConnectFourView.swift */,
+			);
+			path = ConnectFour;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		751712D424D32A060048ED65 /* DragEditorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 751712E524D32A070048ED65 /* Build configuration list for PBXNativeTarget "DragEditorDemo" */;
+			buildPhases = (
+				751712D124D32A060048ED65 /* Sources */,
+				751712D224D32A060048ED65 /* Frameworks */,
+				751712D324D32A060048ED65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DragEditorDemo;
+			packageProductDependencies = (
+				751712EF24D32D490048ED65 /* DragEditor */,
+			);
+			productName = DragEditorDemo;
+			productReference = 751712D524D32A060048ED65 /* DragEditorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		751712CD24D32A060048ED65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					751712D424D32A060048ED65 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 751712D024D32A060048ED65 /* Build configuration list for PBXProject "DragEditorDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 751712CC24D32A060048ED65;
+			productRefGroup = 751712D624D32A060048ED65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				751712D424D32A060048ED65 /* DragEditorDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		751712D324D32A060048ED65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				751712E024D32A070048ED65 /* Preview Assets.xcassets in Resources */,
+				751712DD24D32A070048ED65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		751712D124D32A060048ED65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75131DC524D71229002ACDF6 /* Box.swift in Sources */,
+				751712DB24D32A060048ED65 /* ContentView.swift in Sources */,
+				751712FB24D330790048ED65 /* BoxDragBuilder.swift in Sources */,
+				751712D924D32A060048ED65 /* DragEditorDemoApp.swift in Sources */,
+				751712F724D32E890048ED65 /* CustomTabView.swift in Sources */,
+				75131DC324D71060002ACDF6 /* BoxView.swift in Sources */,
+				75131DC124D70FA4002ACDF6 /* BoxDropView.swift in Sources */,
+				751712F524D32E1D0048ED65 /* ConnectFourView.swift in Sources */,
+				751712F324D32DEF0048ED65 /* BoxDragView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		751712E324D32A070048ED65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		751712E424D32A070048ED65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		751712E624D32A070048ED65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"DragEditorDemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "DragEditorDemo/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cindori.DragEditorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		751712E724D32A070048ED65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"DragEditorDemo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "DragEditorDemo/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cindori.DragEditorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		751712D024D32A060048ED65 /* Build configuration list for PBXProject "DragEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				751712E324D32A070048ED65 /* Debug */,
+				751712E424D32A070048ED65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		751712E524D32A070048ED65 /* Build configuration list for PBXNativeTarget "DragEditorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				751712E624D32A070048ED65 /* Debug */,
+				751712E724D32A070048ED65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		751712EF24D32D490048ED65 /* DragEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DragEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 751712CD24D32A060048ED65 /* Project object */;
+}
