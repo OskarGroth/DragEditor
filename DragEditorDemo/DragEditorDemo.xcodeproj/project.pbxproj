@@ -36,6 +36,7 @@
 		751712F424D32E1D0048ED65 /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
 		751712F624D32E890048ED65 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		751712FA24D330790048ED65 /* BoxDragBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragBuilder.swift; sourceTree = "<group>"; };
+		75AD489E24D82C1F009A285E /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		751712CC24D32A060048ED65 = {
 			isa = PBXGroup;
 			children = (
+				75AD489E24D82C1F009A285E /* Notes.md */,
 				751712D724D32A060048ED65 /* DragEditorDemo */,
 				751712ED24D32D3D0048ED65 /* DragEditor */,
 				751712D624D32A060048ED65 /* Products */,

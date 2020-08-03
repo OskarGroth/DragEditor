@@ -10,8 +10,13 @@ import DragEditor
 
 struct BoxDragView: View {
     
-    let boxes = [Box(color: .green), Box(color: .blue), Box(color: .pink), Box(color: .purple)]
+    @State var builder: BoxBuilder = BoxBuilder()
     
+    // This is annoying, but not sure how to avoid. EnvironmentObject won't work unless : DragBuilder
+    var boxBuilder: BoxBuilder {
+        return builder as! BoxBuilder
+    }
+
     var body: some View {
         DragContainerView {
             HStack {
@@ -19,11 +24,11 @@ struct BoxDragView: View {
                 VStack(spacing: 60) {
                     Spacer()
                     HStack(spacing: 50) {
-                        BoxDropView()
-                        BoxDropView()
+                        BoxDropView().environmentObject(builder)
+                        BoxDropView().environmentObject(builder)
                     }
                     HStack(spacing: 20) {
-                        ForEach(boxes) { box in
+                        ForEach(boxBuilder.library) { box in
                             BoxView(box: box)
                         }
                     }

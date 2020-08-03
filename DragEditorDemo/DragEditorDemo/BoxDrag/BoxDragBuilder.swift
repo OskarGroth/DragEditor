@@ -6,19 +6,22 @@
 //
 
 import DragEditor
-//
-//struct BoxDragBuilder: DragBuilder {
-//    
-//    func proposedDragPosition(at point: CGPoint, itemBounds: [CGRect]) -> DragPosition? {
-//        
-//    }
-//    
-//    func indicatorRect(for position: DragPosition) -> CGRect {
-//        return .zero
-//    }
-//    
-//    func performDrop(_ position: DragPosition) -> Bool {
-//        
-//    }
-//    
-//}
+import SwiftUI
+
+final class BoxBuilder: DragBuilder {
+
+    @Published var color = Color.white
+    @Published var isHovered = false
+    
+    let library = [Box(color: .green), Box(color: .blue), Box(color: .pink), Box(color: .purple)]
+
+    override func drag(id: UUID, location: CGPoint, destinationRect: CGRect) {
+        isHovered = destinationRect.contains(location)
+        print("Hovering \(isHovered)")
+    }
+    
+    override func drop(id: UUID, location: CGPoint, destinationRect: CGRect) {
+        print("Drop inside")
+    }
+    
+}

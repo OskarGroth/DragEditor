@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct DragBuilderPreferenceData: Equatable {
     let viewId: UUID
-    let builder: Binding<DragBuilder>
+    let builder: DragBuilder
     
     public static func == (lhs: DragBuilderPreferenceData, rhs: DragBuilderPreferenceData) -> Bool {
         return false

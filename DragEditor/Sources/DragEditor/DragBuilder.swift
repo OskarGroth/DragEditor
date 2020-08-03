@@ -8,12 +8,57 @@
 
 import Foundation
 
-public protocol DragBuilder {
-    func proposedDragPosition(at point: CGPoint, itemBounds: [CGRect]) -> DragPosition?
-    func indicatorRect(for position: DragPosition) -> CGRect
-    func performDrop(_ position: DragPosition) -> Bool
+public protocol DragBuilderBase: class {
+    
+    init()
+    
+    func drag(id: UUID, location: CGPoint, destinationRect: CGRect)
+    
+    func drop(id: UUID, location: CGPoint, destinationRect: CGRect)
+    
 }
 
+open class DragBuilder: ObservableObject, DragBuilderBase {
+    
+    required public init() {
+        
+    }
+    
+    open func drag(id: UUID, location: CGPoint, destinationRect: CGRect) {
+        fatalError("Implement in subclass!")
+    }
+    
+    open func drop(id: UUID, location: CGPoint, destinationRect: CGRect) {
+        fatalError("Implement in subclass!")
+    }
+    
+    
+}
+
+public extension DragBuilder {
+
+}
+
+//open class BaseDragBuilder: DragBuilder {
+//    
+//    public typealias DragData = Any
+//    
+//    public var dataType: DragData.Type
+//
+//    
+//    public init(dataType: DragData.Type) {
+//        self.dataType = dataType
+//    }
+//    
+//    public func drag(_ info: DragInfo) {
+//        fatalError("Implement in subclass!")
+//    }
+//    
+//    public func drop(_ info: DragInfo) {
+//        fatalError("Implement in subclass!")
+//    }
+//    
+//}
 
 //open class DragBuilder: ObservableObject {
 //    

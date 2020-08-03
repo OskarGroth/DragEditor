@@ -12,7 +12,7 @@ public struct DragContainerView<Content: View>: View {
     
     @GestureState private var dragOffset = CGSize.zero
     @State var destinations: [UUID: CGRect] = [:]
-    @State var builders: [UUID: Binding<DragBuilder>] = [:]
+    @State var builders: [UUID: DragBuilder] = [:]
     
     @State var dragInfo: (id: UUID, location: CGPoint)? = nil
 
@@ -28,8 +28,8 @@ public struct DragContainerView<Content: View>: View {
                 content
             }
             .onPreferenceChange(DragBuilderPreferenceKey.self) { prefs in
-                builders = prefs.reduce(into: [UUID: Binding<DragBuilder>]()) { result, pref in
-                    result[pref.viewId] = pref.builder
+                for pref in prefs {
+                    builders[pref.viewId] = pref.builder
                 }
             }
             .onPreferenceChange(BoundsPreferenceKey.self) { prefs in
@@ -49,7 +49,10 @@ public struct DragContainerView<Content: View>: View {
         if let data = preferences.first(where: { $0.isDragging }) {
             let location = geometry[data.location]
             dragInfo = (data.viewId, location)
-            print("is dragging at \(location)")
+            guard let destination = destinations.first(where: { $0.value.contains(location) }) else {
+                return
+            }
+            builders[destination.key]?.drag(id: data.viewId, location: location, destinationRect: destination.value)
         } else {
             guard let dropInfo = dragInfo, preferences.contains(where: { $0.viewId == dropInfo.id }) else { return }
             handleDrop(at: dropInfo.location, id: dropInfo.id)
@@ -58,11 +61,10 @@ public struct DragContainerView<Content: View>: View {
     }
     
     func handleDrop(at location: CGPoint, id: UUID) {
-        print("Dropped at \(location)")
-//        guard let destinationId = destinations.first(where: { $0.value.contains(location) })?.key else {
-//            print("Not inside destination view")
-//            return
-//        }
+        guard let destination = destinations.first(where: { $0.value.contains(location) }) else {
+            return
+        }
+        builders[destination.key]?.drop(id: id, location: location, destinationRect: destination.value)
     }
     
 }
