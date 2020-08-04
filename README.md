@@ -3,7 +3,7 @@ SwiftUI Drag and Drop editor
 
 This is a library that implements drag & drop handling in SwiftUI.
 
-!(Image)[https://i.imgur.com/XNAlfTc.gif]
+![Image](https://i.imgur.com/XNAlfTc.gif)
 
 ## Why
 The existing drag & drop support (via NSItemProvider) is partly broken (glitching preview images), very inflexible and clearly meant for inter-process communication.
