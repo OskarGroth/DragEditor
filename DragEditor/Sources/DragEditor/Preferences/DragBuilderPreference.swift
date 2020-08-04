@@ -13,7 +13,7 @@ public struct DragCoordinatorPreferenceData: Equatable {
     let coordinator: DragCoordinator
     
     public static func == (lhs: DragCoordinatorPreferenceData, rhs: DragCoordinatorPreferenceData) -> Bool {
-        return false
+        return lhs.viewId == rhs.viewId && lhs.coordinator === rhs.coordinator
     }
 }
 

@@ -14,6 +14,7 @@ struct DragPreferenceData: Equatable {
     let isDragging: Bool
     
     static func == (lhs: DragPreferenceData, rhs: DragPreferenceData) -> Bool {
+        // We can't compare Anchors.
         return false
     }
 }

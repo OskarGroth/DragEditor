@@ -9,12 +9,13 @@
 import SwiftUI
 
 public struct BoundsPreferenceData: Equatable {
-    public static func == (lhs: BoundsPreferenceData, rhs: BoundsPreferenceData) -> Bool {
-        return false
-    }
-    
     let viewId: UUID
     let bounds: Anchor<CGRect>
+    
+    public static func == (lhs: BoundsPreferenceData, rhs: BoundsPreferenceData) -> Bool {
+        // We can't compare Anchors.
+        return false
+    }
 }
 
 struct BoundsPreferenceKey: PreferenceKey {

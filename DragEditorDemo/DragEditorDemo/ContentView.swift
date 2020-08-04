@@ -10,21 +10,7 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        CustomTabView(
-            tabBarPosition: .top,
-            content: [
-                (
-                    tabText: "Box Drag",
-                    tabIconName: "icons.general.home",
-                    view: AnyView(BoxDragView())
-                ),
-                (
-                    tabText: "Connect Four",
-                    tabIconName: "icons.general.cog",
-                    view: AnyView(ConnectFourView())
-                )
-            ]
-        )
+        BoxDragView()
     }
 }
 

@@ -17,15 +17,15 @@ public struct DragContainerView<Content: View>: View {
 
     let content: Content
     
+    @State var lastDestination: UUID?
+    
     public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
     
     public var body: some View {
         GeometryReader { geometry in
-            VStack {
-                content
-            }
+            content
             .onPreferenceChange(DragCoordinatorPreferenceKey.self) { prefs in
                 for pref in prefs {
                     coordinators[pref.viewId] = pref.coordinator
@@ -46,11 +46,13 @@ public struct DragContainerView<Content: View>: View {
     
     func handleDrag(_ geometry: GeometryProxy, _ preferences: [DragPreferenceData]) {
         if let data = preferences.first(where: { $0.isDragging }) {
-            let location = geometry[data.location]
-            guard let target = destinations.first(where: { $0.value.contains(location) }) else { return }
+            let location = geometry[data.location] // FIXME: Doesn't seem to be correct.
+            guard let target = (destinations.min { [point = SIMD2(location)] in point.getSignedDistance(to: $0.value) }) else { return }
             coordinators[target.key]?.drag(id: data.viewId, target: target.key, targetRect: target.value, location: location)
-        } else {
-            //builder.drop()
+            lastDestination = target.key
+        } else if let target = lastDestination { // If we handled a drag without a dragging view, it was a drop
+            coordinators[target]?.drop()
+            lastDestination = nil
         }
     }
     

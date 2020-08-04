@@ -24,20 +24,19 @@ open class DragCoordinator: ObservableObject {
     }
     
     open func drag(id: UUID, target: UUID, targetRect: CGRect, location: CGPoint) {
-        //let hoveredDestination = destinations.first(where: { $0.value.contains(location) })?.key
-        dragInfo = .init(draggedId: id, location: location, closestDestination: target, isInside: true)
+        dragInfo = .init(draggedId: id, location: location, closestDestination: target, isInside: targetRect.contains(location))
     }
     
     open func drop() {
-//        guard let id = dragInfo.draggedId, let location = dragInfo.location, let closest = dragInfo.closestDestination else { return }
-//        if destinations[closest]?.contains(location) ?? false {
-//            dropped(id: id, inside: closest, at: location)
-//        }
+        guard let id = dragInfo.draggedId, let location = dragInfo.location, let target = dragInfo.closestDestination else { return }
+        if dragInfo.isInside {
+            dropped(id: id, inside: target, at: location)
+        }
         dragInfo = .init(draggedId: nil, location: nil, closestDestination: nil, isInside: false)
     }
     
     open func dropped(id: UUID, inside destinationId: UUID, at: CGPoint) {
-        
+        // Implement in subclass
     }
     
 }

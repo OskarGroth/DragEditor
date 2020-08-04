@@ -16,7 +16,6 @@
 		751712E024D32A070048ED65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751712DF24D32A070048ED65 /* Preview Assets.xcassets */; };
 		751712F024D32D490048ED65 /* DragEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 751712EF24D32D490048ED65 /* DragEditor */; };
 		751712F324D32DEF0048ED65 /* BoxDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F224D32DEF0048ED65 /* BoxDragView.swift */; };
-		751712F524D32E1D0048ED65 /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F424D32E1D0048ED65 /* ConnectFourView.swift */; };
 		751712F724D32E890048ED65 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F624D32E890048ED65 /* CustomTabView.swift */; };
 		751712FB24D330790048ED65 /* BoxBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712FA24D330790048ED65 /* BoxBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		751712E124D32A070048ED65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751712ED24D32D3D0048ED65 /* DragEditor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DragEditor; path = ../DragEditor; sourceTree = "<group>"; };
 		751712F224D32DEF0048ED65 /* BoxDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragView.swift; sourceTree = "<group>"; };
-		751712F424D32E1D0048ED65 /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
 		751712F624D32E890048ED65 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		751712FA24D330790048ED65 /* BoxBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBuilder.swift; sourceTree = "<group>"; };
 		75AD489E24D82C1F009A285E /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
@@ -75,9 +73,8 @@
 			children = (
 				751712D824D32A060048ED65 /* DragEditorDemoApp.swift */,
 				751712DA24D32A060048ED65 /* ContentView.swift */,
-				751712F824D330520048ED65 /* BoxDrag */,
-				751712F924D3305B0048ED65 /* ConnectFour */,
 				751712F624D32E890048ED65 /* CustomTabView.swift */,
+				751712F824D330520048ED65 /* BoxDrag */,
 				751712F124D32D5C0048ED65 /* Supporting Files */,
 				751712DE24D32A070048ED65 /* Preview Content */,
 			);
@@ -118,14 +115,6 @@
 				75131DC424D71229002ACDF6 /* Box.swift */,
 			);
 			path = BoxDrag;
-			sourceTree = "<group>";
-		};
-		751712F924D3305B0048ED65 /* ConnectFour */ = {
-			isa = PBXGroup;
-			children = (
-				751712F424D32E1D0048ED65 /* ConnectFourView.swift */,
-			);
-			path = ConnectFour;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +196,6 @@
 				751712F724D32E890048ED65 /* CustomTabView.swift in Sources */,
 				75131DC324D71060002ACDF6 /* BoxView.swift in Sources */,
 				75131DC124D70FA4002ACDF6 /* BoxDropView.swift in Sources */,
-				751712F524D32E1D0048ED65 /* ConnectFourView.swift in Sources */,
 				751712F324D32DEF0048ED65 /* BoxDragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
