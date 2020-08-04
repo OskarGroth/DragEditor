@@ -10,25 +10,20 @@ import DragEditor
 
 struct BoxDragView: View {
     
-    @State var builder: BoxBuilder = BoxBuilder()
+    let builder = BoxBuilder()
     
-    // This is annoying, but not sure how to avoid. EnvironmentObject won't work unless : DragBuilder
-    var boxBuilder: BoxBuilder {
-        return builder as! BoxBuilder
-    }
-
     var body: some View {
-        DragContainerView {
+        DragContainerView(builder: builder) {
             HStack {
                 Spacer()
                 VStack(spacing: 60) {
                     Spacer()
                     HStack(spacing: 50) {
-                        BoxDropView().environmentObject(builder)
-                        BoxDropView().environmentObject(builder)
+                        BoxDropView()
+                        BoxDropView()
                     }
                     HStack(spacing: 20) {
-                        ForEach(boxBuilder.library) { box in
+                        ForEach(builder.library) { box in
                             BoxView(box: box)
                         }
                     }
@@ -36,7 +31,8 @@ struct BoxDragView: View {
                 }
                 Spacer()
             }
-        }
+            .environmentObject(builder)
+        }//.environmentObject(builder as DragBuilder) // Casting is important, otherwise Environment can't find it
     }
     
 }

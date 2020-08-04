@@ -6,68 +6,34 @@
 //  Copyright © 2020 Oskar Groth. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-public protocol DragBuilderBase: class {
+open class DragBuilder: ObservableObject {
     
-    init()
+    public struct DragInfo {
+        public var draggedId: UUID?
+        public var location: CGPoint?
+        public var closestDestination: UUID?
+        public var isInside: Bool
+    }
+    // Needs at least one Published value for subclasses publishers to fire. FB8256902
     
-    func drag(id: UUID, location: CGPoint, destinationRect: CGRect)
-    
-    func drop(id: UUID, location: CGPoint, destinationRect: CGRect)
-    
-}
+    @Published public var dragInfo: DragInfo = DragInfo(draggedId: nil, location: nil, closestDestination: nil, isInside: false)
+    @Published public var destinations: [UUID: CGRect] = [:]
 
-open class DragBuilder: ObservableObject, DragBuilderBase {
-    
     required public init() {
         
     }
     
-    open func drag(id: UUID, location: CGPoint, destinationRect: CGRect) {
-        fatalError("Implement in subclass!")
+    open func drag(id: UUID, location: CGPoint) {
+        let hoveredDestination = destinations.first(where: { $0.value.contains(location) })?.key
+        dragInfo = .init(draggedId: id, location: location, closestDestination: hoveredDestination, isInside: hoveredDestination != nil)
     }
     
-    open func drop(id: UUID, location: CGPoint, destinationRect: CGRect) {
-        fatalError("Implement in subclass!")
+    open func drop() {
+        guard let id = dragInfo.draggedId, let location = dragInfo.location else { return }
+        print("Dropped")
+        dragInfo = .init(draggedId: nil, location: nil, closestDestination: nil, isInside: false)
     }
     
-    
 }
-
-public extension DragBuilder {
-
-}
-
-//open class BaseDragBuilder: DragBuilder {
-//    
-//    public typealias DragData = Any
-//    
-//    public var dataType: DragData.Type
-//
-//    
-//    public init(dataType: DragData.Type) {
-//        self.dataType = dataType
-//    }
-//    
-//    public func drag(_ info: DragInfo) {
-//        fatalError("Implement in subclass!")
-//    }
-//    
-//    public func drop(_ info: DragInfo) {
-//        fatalError("Implement in subclass!")
-//    }
-//    
-//}
-
-//open class DragBuilder: ObservableObject {
-//    
-//    
-//    func updateState(for dragPoint: CGPoint, itemBounds: [CGRect]) {
-//        print("Implement in subclass")
-//    }
-//    
-//    func performDrop(at position: CGPoint)
-//    
-//    
-//}

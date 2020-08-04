@@ -11,14 +11,12 @@ import SwiftUI
 public struct DragContainerView<Content: View>: View {
     
     @GestureState private var dragOffset = CGSize.zero
-    @State var destinations: [UUID: CGRect] = [:]
-    @State var builders: [UUID: DragBuilder] = [:]
     
-    @State var dragInfo: (id: UUID, location: CGPoint)? = nil
-
     let content: Content
+    var builder: DragBuilder
     
-    public init(@ViewBuilder content: () -> Content) {
+    public init(builder: DragBuilder, @ViewBuilder content: () -> Content) {
+        self.builder = builder
         self.content = content()
     }
     
@@ -27,17 +25,12 @@ public struct DragContainerView<Content: View>: View {
             VStack {
                 content
             }
-            .onPreferenceChange(DragBuilderPreferenceKey.self) { prefs in
-                for pref in prefs {
-                    builders[pref.viewId] = pref.builder
-                }
-            }
             .onPreferenceChange(BoundsPreferenceKey.self) { prefs in
                 for pref in prefs {
-                    self.destinations[pref.viewId] = geometry[pref.bounds]
+                    self.builder.destinations[pref.viewId] = geometry[pref.bounds]
                 }
             }
-            // This might trigger "tried to update multiple times per frame" warnings, but is considered harmless and SwiftUI internal bug.
+            // This might trigger "tried to update multiple times per frame" warnings, but is considered harmless and SwiftUI internal bug(?)
             // https://www.openradar.appspot.com/FB7558683
             .onPreferenceChange(DragPreferenceKey.self) { prefs in
                 handleDrag(geometry, prefs)
@@ -47,24 +40,10 @@ public struct DragContainerView<Content: View>: View {
     
     func handleDrag(_ geometry: GeometryProxy, _ preferences: [DragPreferenceData]) {
         if let data = preferences.first(where: { $0.isDragging }) {
-            let location = geometry[data.location]
-            dragInfo = (data.viewId, location)
-            guard let destination = destinations.first(where: { $0.value.contains(location) }) else {
-                return
-            }
-            builders[destination.key]?.drag(id: data.viewId, location: location, destinationRect: destination.value)
+            builder.drag(id: data.viewId, location: geometry[data.location])
         } else {
-            guard let dropInfo = dragInfo, preferences.contains(where: { $0.viewId == dropInfo.id }) else { return }
-            handleDrop(at: dropInfo.location, id: dropInfo.id)
-            dragInfo = nil
+            builder.drop()
         }
-    }
-    
-    func handleDrop(at location: CGPoint, id: UUID) {
-        guard let destination = destinations.first(where: { $0.value.contains(location) }) else {
-            return
-        }
-        builders[destination.key]?.drop(id: id, location: location, destinationRect: destination.value)
     }
     
 }

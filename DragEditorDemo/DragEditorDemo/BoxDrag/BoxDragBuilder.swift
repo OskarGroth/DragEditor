@@ -8,20 +8,38 @@
 import DragEditor
 import SwiftUI
 
-final class BoxBuilder: DragBuilder {
-
+class BoxBuilder: DragBuilder {
+    
     @Published var color = Color.white
-    @Published var isHovered = false
     
     let library = [Box(color: .green), Box(color: .blue), Box(color: .pink), Box(color: .purple)]
 
-    override func drag(id: UUID, location: CGPoint, destinationRect: CGRect) {
-        isHovered = destinationRect.contains(location)
-        print("Hovering \(isHovered)")
+    override func drag(id: UUID, location: CGPoint) {
+        super.drag(id: id, location: location)
     }
     
-    override func drop(id: UUID, location: CGPoint, destinationRect: CGRect) {
-        print("Drop inside")
+    override func drop() {
+        super.drop()
     }
     
 }
+
+//class BoxBuilder: DragBuilder {
+//
+//    @Published var color = Color.white
+//    @Published var isHovered = false {
+//        willSet { objectWillChange.send() }
+//    }
+//
+//    let library = [Box(color: .green), Box(color: .blue), Box(color: .pink), Box(color: .purple)]
+//
+//    override func drag(id: UUID, location: CGPoint, destinationRect: CGRect) {
+//        isHovered = destinationRect.contains(location)
+//        print("Hovering \(isHovered)")
+//    }
+//
+//    override func drop(id: UUID, location: CGPoint, destinationRect: CGRect) {
+//        print("Drop inside")
+//    }
+//
+//}
