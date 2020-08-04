@@ -18,7 +18,7 @@
 		751712F324D32DEF0048ED65 /* BoxDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F224D32DEF0048ED65 /* BoxDragView.swift */; };
 		751712F524D32E1D0048ED65 /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F424D32E1D0048ED65 /* ConnectFourView.swift */; };
 		751712F724D32E890048ED65 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712F624D32E890048ED65 /* CustomTabView.swift */; };
-		751712FB24D330790048ED65 /* BoxDragBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712FA24D330790048ED65 /* BoxDragBuilder.swift */; };
+		751712FB24D330790048ED65 /* BoxBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751712FA24D330790048ED65 /* BoxBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		751712F224D32DEF0048ED65 /* BoxDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragView.swift; sourceTree = "<group>"; };
 		751712F424D32E1D0048ED65 /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
 		751712F624D32E890048ED65 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
-		751712FA24D330790048ED65 /* BoxDragBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxDragBuilder.swift; sourceTree = "<group>"; };
+		751712FA24D330790048ED65 /* BoxBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBuilder.swift; sourceTree = "<group>"; };
 		75AD489E24D82C1F009A285E /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				751712F224D32DEF0048ED65 /* BoxDragView.swift */,
-				751712FA24D330790048ED65 /* BoxDragBuilder.swift */,
+				751712FA24D330790048ED65 /* BoxBuilder.swift */,
 				75131DC024D70FA4002ACDF6 /* BoxDropView.swift */,
 				75131DC224D71060002ACDF6 /* BoxView.swift */,
 				75131DC424D71229002ACDF6 /* Box.swift */,
@@ -202,7 +202,7 @@
 			files = (
 				75131DC524D71229002ACDF6 /* Box.swift in Sources */,
 				751712DB24D32A060048ED65 /* ContentView.swift in Sources */,
-				751712FB24D330790048ED65 /* BoxDragBuilder.swift in Sources */,
+				751712FB24D330790048ED65 /* BoxBuilder.swift in Sources */,
 				751712D924D32A060048ED65 /* DragEditorDemoApp.swift in Sources */,
 				751712F724D32E890048ED65 /* CustomTabView.swift in Sources */,
 				75131DC324D71060002ACDF6 /* BoxView.swift in Sources */,

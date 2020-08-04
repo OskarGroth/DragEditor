@@ -19,8 +19,9 @@ struct BoxDragView: View {
                 VStack(spacing: 60) {
                     Spacer()
                     HStack(spacing: 50) {
-                        BoxDropView()
-                        BoxDropView()
+                        ForEach(builder.colorWells) { box in
+                            BoxDropView(id: box.id)
+                        }
                     }
                     HStack(spacing: 20) {
                         ForEach(builder.library) { box in
@@ -32,7 +33,7 @@ struct BoxDragView: View {
                 Spacer()
             }
             .environmentObject(builder)
-        }.environment(\.dragBuilder, builder)
+        }.environment(\.dragCoordinator, builder)
     }
     
 }

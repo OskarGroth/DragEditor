@@ -12,7 +12,8 @@ public struct DragContainerView<Content: View>: View {
     
     @GestureState private var dragOffset = CGSize.zero
     
-    @Environment(\.dragBuilder) var builder
+    @State var destinations: [UUID: CGRect] = [:]
+    @State var coordinators: [UUID: DragCoordinator] = [:]
 
     let content: Content
     
@@ -25,9 +26,14 @@ public struct DragContainerView<Content: View>: View {
             VStack {
                 content
             }
+            .onPreferenceChange(DragCoordinatorPreferenceKey.self) { prefs in
+                for pref in prefs {
+                    coordinators[pref.viewId] = pref.coordinator
+                }
+            }
             .onPreferenceChange(BoundsPreferenceKey.self) { prefs in
                 for pref in prefs {
-                    self.builder.destinations[pref.viewId] = geometry[pref.bounds]
+                    self.destinations[pref.viewId] = geometry[pref.bounds]
                 }
             }
             // FIXME: This triggers "tried to update multiple times per frame" warnings
@@ -40,9 +46,11 @@ public struct DragContainerView<Content: View>: View {
     
     func handleDrag(_ geometry: GeometryProxy, _ preferences: [DragPreferenceData]) {
         if let data = preferences.first(where: { $0.isDragging }) {
-            builder.drag(id: data.viewId, location: geometry[data.location])
+            let location = geometry[data.location]
+            guard let target = destinations.first(where: { $0.value.contains(location) }) else { return }
+            coordinators[target.key]?.drag(id: data.viewId, target: target.key, targetRect: target.value, location: location)
         } else {
-            builder.drop()
+            //builder.drop()
         }
     }
     

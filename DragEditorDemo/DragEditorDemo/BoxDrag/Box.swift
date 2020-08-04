@@ -9,5 +9,5 @@ import SwiftUI
 
 struct Box: Identifiable {
     let id: UUID = UUID()
-    let color: Color
+    var color: Color
 }

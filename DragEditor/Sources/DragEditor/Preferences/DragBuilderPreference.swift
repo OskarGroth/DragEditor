@@ -1,6 +1,6 @@
 //
-//  DragBuilderPreference.swift
-//  DraggyBoi
+//  DragCoordinatorPreference.swift
+//  DragEditor
 //
 //  Created by Oskar Groth on 2020-07-29.
 //  Copyright © 2020 Oskar Groth. All rights reserved.
@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-public struct DragBuilderPreferenceData: Equatable {
+public struct DragCoordinatorPreferenceData: Equatable {
     let viewId: UUID
-    let builder: DragBuilder
+    let coordinator: DragCoordinator
     
-    public static func == (lhs: DragBuilderPreferenceData, rhs: DragBuilderPreferenceData) -> Bool {
+    public static func == (lhs: DragCoordinatorPreferenceData, rhs: DragCoordinatorPreferenceData) -> Bool {
         return false
     }
 }
 
-struct DragBuilderPreferenceKey: PreferenceKey {
-    typealias Value = [DragBuilderPreferenceData]
+struct DragCoordinatorPreferenceKey: PreferenceKey {
+    typealias Value = [DragCoordinatorPreferenceData]
 
-    static var defaultValue: [DragBuilderPreferenceData] = []
+    static var defaultValue: [DragCoordinatorPreferenceData] = []
 
-    static func reduce(value: inout [DragBuilderPreferenceData], nextValue: () -> [DragBuilderPreferenceData]) {
+    static func reduce(value: inout [DragCoordinatorPreferenceData], nextValue: () -> [DragCoordinatorPreferenceData]) {
         value.append(contentsOf: nextValue())
     }
 }

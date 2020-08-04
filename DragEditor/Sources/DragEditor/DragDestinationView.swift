@@ -13,6 +13,8 @@ public struct DragDestinationView<Content: View>: View {
     let id: UUID
     let content: Content
     
+    @Environment(\.dragCoordinator) var coordinator
+    
     public init(id: UUID = UUID(), @ViewBuilder content: () -> Content) {
         self.id = id
         self.content = content()
@@ -21,5 +23,6 @@ public struct DragDestinationView<Content: View>: View {
     public var body: some View {
         content
             .anchorPreference(key: BoundsPreferenceKey.self, value: .bounds, transform: { [BoundsPreferenceData(viewId: id, bounds: $0)] })
+            .preference(key: DragCoordinatorPreferenceKey.self, value: [.init(viewId: id, coordinator: coordinator)])
     }
 }
