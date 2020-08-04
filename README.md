@@ -18,7 +18,7 @@ I built this to create a better alternative for visual drag-drop editing within 
 - Each destination view will manage the drag/drop closest to it.
 
 ## Issues
-There is currently a bug where the conversion of the location anchor does not seem to match the conversion of the destination anchor. PR's welcome.
+There is currently a bug where the conversion of the location anchor does not seem to match the conversion of the destination anchor, causing incorrect hover logic. PR's welcome.
 
 ## Resources
 https://swiftui-lab.com/communicating-with-the-view-tree-part-1/
