@@ -21,6 +21,8 @@ I built this to create a better alternative for visual drag-drop editing within 
 - There is currently a bug where the conversion of the location anchor does not seem to match the conversion of the destination anchor, causing incorrect hover logic.
 - Needs some way to handle the animation of a dragged view if the drop was successful.
 
+PR's welcome.
+
 ## Resources
 https://swiftui-lab.com/communicating-with-the-view-tree-part-1/
 
