@@ -17,3 +17,7 @@ I built this to create a better alternative for visual drag-drop editing within 
 - Drag view and destination drop view does not require any knowledge about each other.
 - Allow multiple drag/destination views that work independently of each other.
 - Each destination view will manage the drag/drop closest to it.
+
+## Resources
+https://swiftui-lab.com/communicating-with-the-view-tree-part-1/
+https://swiftwithmajid.com/2020/03/18/anchor-preferences-in-swiftui/
