@@ -112,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				751712F224D32DEF0048ED65 /* BoxDragView.swift */,
-				75131DC024D70FA4002ACDF6 /* BoxDropView.swift */,
-				75131DC424D71229002ACDF6 /* Box.swift */,
-				75131DC224D71060002ACDF6 /* BoxView.swift */,
 				751712FA24D330790048ED65 /* BoxDragBuilder.swift */,
+				75131DC024D70FA4002ACDF6 /* BoxDropView.swift */,
+				75131DC224D71060002ACDF6 /* BoxView.swift */,
+				75131DC424D71229002ACDF6 /* Box.swift */,
 			);
 			path = BoxDrag;
 			sourceTree = "<group>";

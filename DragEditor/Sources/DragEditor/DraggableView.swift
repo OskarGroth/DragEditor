@@ -13,9 +13,7 @@ public struct DraggableView<Content: View>: View {
     @GestureState private var dragLocation = CGPoint.zero
     @GestureState private var dragOffset: CGSize? = nil
     @GestureState private var isDragging = false
-    
-    @State private var dropLocation: Anchor<CGPoint>.Source? = nil
-    
+        
     let content: Content
     let id: UUID
     

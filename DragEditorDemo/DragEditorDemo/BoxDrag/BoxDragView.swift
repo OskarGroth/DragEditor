@@ -13,7 +13,7 @@ struct BoxDragView: View {
     let builder = BoxBuilder()
     
     var body: some View {
-        DragContainerView(builder: builder) {
+        DragContainerView() {
             HStack {
                 Spacer()
                 VStack(spacing: 60) {
@@ -32,7 +32,7 @@ struct BoxDragView: View {
                 Spacer()
             }
             .environmentObject(builder)
-        }//.environmentObject(builder as DragBuilder) // Casting is important, otherwise Environment can't find it
+        }.environment(\.dragBuilder, builder)
     }
     
 }

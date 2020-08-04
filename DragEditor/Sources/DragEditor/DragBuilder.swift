@@ -16,7 +16,6 @@ open class DragBuilder: ObservableObject {
         public var closestDestination: UUID?
         public var isInside: Bool
     }
-    // Needs at least one Published value for subclasses publishers to fire. FB8256902
     
     @Published public var dragInfo: DragInfo = DragInfo(draggedId: nil, location: nil, closestDestination: nil, isInside: false)
     @Published public var destinations: [UUID: CGRect] = [:]

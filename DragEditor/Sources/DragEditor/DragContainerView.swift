@@ -12,11 +12,11 @@ public struct DragContainerView<Content: View>: View {
     
     @GestureState private var dragOffset = CGSize.zero
     
+    @Environment(\.dragBuilder) var builder
+
     let content: Content
-    var builder: DragBuilder
     
-    public init(builder: DragBuilder, @ViewBuilder content: () -> Content) {
-        self.builder = builder
+    public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
     
@@ -30,7 +30,7 @@ public struct DragContainerView<Content: View>: View {
                     self.builder.destinations[pref.viewId] = geometry[pref.bounds]
                 }
             }
-            // This might trigger "tried to update multiple times per frame" warnings, but is considered harmless and SwiftUI internal bug(?)
+            // FIXME: This triggers "tried to update multiple times per frame" warnings
             // https://www.openradar.appspot.com/FB7558683
             .onPreferenceChange(DragPreferenceKey.self) { prefs in
                 handleDrag(geometry, prefs)

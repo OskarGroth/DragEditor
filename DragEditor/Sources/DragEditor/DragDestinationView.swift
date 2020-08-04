@@ -9,9 +9,7 @@
 import SwiftUI
 
 public struct DragDestinationView<Content: View>: View {
-        
-    @EnvironmentObject var builder: DragBuilder
-    
+
     let id: UUID
     let content: Content
     
