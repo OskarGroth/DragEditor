@@ -5,11 +5,6 @@ This is a library that implements drag & drop handling in SwiftUI.
 
 ![Image](https://i.imgur.com/XNAlfTc.gif)
 
-## Why
-The existing drag & drop support (via NSItemProvider) is partly broken (glitching preview images), very inflexible and clearly meant for inter-process communication.
-
-I built this to create a better alternative for visual drag-drop editing within the same app.
-
 ## Core concepts
 
 - Allow the drag view and the destination drop view to be arbitrarily nested in your view hierarchy, as long as there is a DragContainerView enclosing them somewhere further up in the hierarchy.
